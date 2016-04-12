@@ -37,18 +37,4 @@ angular.module('karaoke.home', [])
     $scope.loading = false;
   }
 
-  // make a map
-  // var rendermap = function (lat, long) {
-  //   var map = L.map('map').setView([lat, long], 15);  //<-- zoom level, larger is zoomed in
-  //   L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
-  //     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-  //     subdomains: 'abcd',
-  //     minZoom: 0,
-  //     maxZoom: 20,
-  //     ext: 'png'
-  //   }).addTo(map);
-  //
-  //   console.log(map.getBounds()); //<-- what we'll use to query the db, may add a buffer for preload outside of map
-  // };
-
 });
