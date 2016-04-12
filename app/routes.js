@@ -12,7 +12,7 @@ module.exports = function (app, express) {
   //user helper for decoding token if route is addEvent
   app.use(helpers.decode);
 
-  app.route('api/addEvent') //not sure what this api is yet
+  app.route('api/addevent') //not sure what this api is yet
     .post() //define function in eventServices.js
     .get(); //define function in eventServices.js
 
