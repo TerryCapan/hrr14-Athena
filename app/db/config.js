@@ -1,18 +1,30 @@
-var Bookshelf = require('bookshelf');
+var Bookshelf = require('bookshelf')(pg);
 var path = require('path');
 var connectionString = require('./connectionString.js');
 
-
-var db = Bookshelf.initialize({
+var pg = require('knex')({
+  user: 'postgres',
   client: 'pg',
-  connection: connectionString
+  connection: {
+    host: 'localhost',
+    port: '5432',
+    user: "postgres",
+    database: 'karaoke',
+    charset: 'utf8'
+  }
 });
 
 
+// var db = Bookshelf.initialize({
+//   client: 'pg',
+//   connection: connectionString
+// });
 
-db.knex.schema.hasTable('users').then(function(exists) {
+
+
+pg.schema.hasTable('users').then(function(exists) {
   if (!exists) {
-    db.knex.schema.createTable('users', function(user) {
+    return pg.schema.createTable('users', function(user) {
       user.increments('id').primary();
       user.string('username', 20);
       user.string('password', 100);
@@ -26,4 +38,4 @@ db.knex.schema.hasTable('users').then(function(exists) {
 
 
 
-module.exports = db;
+module.exports = pg;

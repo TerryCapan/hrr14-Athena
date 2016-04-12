@@ -1,8 +1,10 @@
 var db = require('../config.js');
+var Bookshelf = require('bookshelf')(db);
+var path = require('path');
 var bcrypt = require('bcrypt-nodejs');
 var Promise = require('bluebird');
 
-var User = db.Model.extend({
+var User = Bookshelf.Model.extend({
   tableName: 'users',
   hasTimestamps: true,
 

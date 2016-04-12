@@ -40,7 +40,7 @@ module.exports = {
         });
         newUser.save()
           .then(function(newUser) {
-            Users.add(newUser);
+          //newUser = new Users //Users.add(newUser);
             var token = jwt.encode(user, 'secret');
             res.json({token: token});
           });
