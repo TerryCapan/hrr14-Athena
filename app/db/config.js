@@ -39,7 +39,7 @@ pg.schema.hasTable('events').then(function(exists) {
   if (!exists) {
     return pg.schema.createTable('events', function(event) {
       event.increments('id').primary();
-      event.integer.references('users.id');
+      event.integer('user_id').references('users.id');
       event.date('date', 4);
       event.time[(p)]('time', 8);
       event.string('type_of_meet', 15);
