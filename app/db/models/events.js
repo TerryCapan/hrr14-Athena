@@ -1,5 +1,5 @@
 // var db = require('../config.js');
-var Bookshelf = require('../database')
+var Bookshelf = require('../database');
 // var path = require('path');
 require('./user');
 
