@@ -86,9 +86,13 @@ angular.module('karaoke.services')
 
   return {
     addEvent: addEvent,
+<<<<<<< HEAD
     getOne: getOne,
     getAll: getAll,
     parseTime: parseTime,
     populateEvents: populateEvents
+=======
+    getOne: getOne
+>>>>>>> set up events page framework
   };
 });
