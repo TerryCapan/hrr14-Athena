@@ -81,7 +81,6 @@ angular.module('karaoke.services')
       eventObj.date = date.day;
       eventObj.time = date.time;
       eventsArr.push(eventObj);
-      console.log(eventObj);
     });
     return eventsArr;
   };
