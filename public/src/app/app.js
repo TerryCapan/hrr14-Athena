@@ -9,6 +9,7 @@ angular.module('karaoke', [
   'karaoke.auth',
   'karaoke.addevent',
   'karaoke.event',
+  'karaoke.allevents',
   'ui.router'
 ])
 
@@ -41,6 +42,11 @@ angular.module('karaoke', [
       templateUrl: 'src/app/components/addevent/addevent.html',
       controller: 'addEventCtrl',
       authenticate: true
+    })
+    .state('allevents', {
+      url: '/allevents',
+      templateUrl: 'src/app/components/allevents/allevents.html',
+      controller: 'allEventsCtrl'
     });
   $httpProvider.interceptors.push('AttachTokens');
 })

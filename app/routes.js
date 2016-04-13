@@ -11,6 +11,7 @@ module.exports = function (app, express) {
 
   app.get('/api/event', eventService.getEvents);
   app.get('/api/event/:eventId', eventService.getOneEvent);
+  app.get('/api/events', eventService.getEvents);
   //user helper for decoding token if route is addEvent
   app.use(helpers.decode);
 

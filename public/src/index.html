@@ -15,6 +15,7 @@
         <a ui-sref="signup" ng-if="!loggedIn"><li class="nav-item">Sign Up</li></a>
         <a href="#" ng-click="logOut()" ng-if="loggedIn"><li class="nav-item">Log Out</li></a>
         <a ui-sref="addevent" ng-if="loggedIn"><li class="nav-item">Add An Event</li></a>
+        <a ui-sref="allevents"><li class="nav-item">All Events</li></a>
       </ul>
     </nav>
     <h1 class="main-title"><a href="#/">KARAOKE APP</a></h1>
@@ -43,6 +44,7 @@
   <script src="src/app/components/auth/auth.js"></script>
   <script src="src/app/components/addevent/addevent.js"></script>
   <script src="src/app/components/event/event.js"></script>
+  <script src="src/app/components/allevents/allevents.js"></script>
   <script src="src/app/app.js"></script>
   <!--<!(endif)-->
 

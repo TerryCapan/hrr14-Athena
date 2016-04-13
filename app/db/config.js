@@ -44,8 +44,8 @@ pg.schema.hasTable('events').then(function(exists) {
       event.integer('user_id').references('users.id');
       event.timestamp('time'); //defaults to postgres-timestamptz which includes time, date and time zone
       event.string('type_of_meet', 15);
-      event.string('song_title', 20);
-      event.string('as_sung_by', 20);
+      event.string('song_title', 50);
+      event.string('as_sung_by', 30);
       event.specificType('location_point', 'point');
       //specificType is the only option that allows choosing types
       //that arent available in knex. http://knexjs.org/#Schema-Building

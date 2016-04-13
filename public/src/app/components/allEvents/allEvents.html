@@ -1,0 +1,9 @@
+<input type='text' ng-model='search' placeholder="Filter Events"></input>
+
+<div ng-repeat='event in data.events | filter:search | orderBy: "fullTime"'>
+  <h3>Event Creator: {{ event.creator }}</h3>
+  <h3>Song Title: {{ event.song }}</h3>
+  <h3>As sung by: {{ event.artist }}</h3>
+  <h4>{{ event.date }}</h4>
+  <h4>{{ event.time }}</h4>
+</div>
