@@ -47,11 +47,11 @@ pg.schema.hasTable('events').then(function(exists) {
       event.string('song_title', 20);
       event.string('as_sung_by', 20);
       event.specificType('location_point', 'point');
-      //specificType is the only knex option that allows choosing types
-      //that arent supported by knex. http://knexjs.org/#Schema-Building
-      //if this isn't sufficient, we'll have to figure out using knex-postgis
-      //or knex.raw(). neither of which i fully comprehend
-      //or do a dreaded refactor to mongo, or use postgres without bookshelf
+      //specificType is the only option that allows choosing types
+      //that arent available in knex. http://knexjs.org/#Schema-Building
+      //it does require passing a valid postgres type as the second arg
+      //or it fails to build, so it's certianly a step in the right direction
+      //queries may be tricky or maybe not...
     }).then(function(table) {
       console.log('Table created! ', table);
     });
