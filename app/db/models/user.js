@@ -10,7 +10,7 @@ var User = Bookshelf.Model.extend({
   tableName: 'users',
 
   events: function() {
-    return this.hasMany(events);
+    return this.hasMany(Event);
   },
 
   comparePassword: function(attemptedPassword, callback) {

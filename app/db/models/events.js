@@ -5,14 +5,13 @@ var bcrypt = require('bcrypt-nodejs');
 var Promise = require('bluebird');
 var events = require('./events.js');
 
-var Events = Bookshelf.Model.extend({
+var Event = Bookshelf.Model.extend({
   tableName: 'events',
 
-  user: function(){
+  user: function() {
     return this.belongsTo(User);
   }
 
 });
 
 module.exports = Events;
-

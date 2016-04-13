@@ -1,4 +1,4 @@
-// add funtions for handling event routes 
+// add funtions for handling event routes
 var Event = require('../models/events.js');
 
 module.exports = {
@@ -31,7 +31,7 @@ module.exports = {
           });
           newEvent.save()
             .then(function(event) {
-              console.log("Event is saved");
+              console.log('Event is saved');
             });
         } else {
           console.log('Event already exists');
