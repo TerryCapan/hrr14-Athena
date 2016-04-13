@@ -1,15 +1,18 @@
 angular.module('karaoke.addevent', [])
 
-.controller('addEventCtrl', function($scope, $state) {
+.controller('addEventCtrl', function($scope, $state, eventFactory) {
 
   $scope.event = {};
 
   $scope.addEvent = function(isValid) {
     if (isValid) {
       console.log($scope.event);
-      // redirect to the new event
-      // UPDATE THIS to only redirect once the event creation has gone through?
-      $state.go('event', {eventID : $scope.event.title});
+      eventFactory.addEvent($scope.event)
+      .then(function(response) {
+        // redirect to the new event
+        $state.go('event', { eventID : response.id });
+      });
+      
     }
   };
 

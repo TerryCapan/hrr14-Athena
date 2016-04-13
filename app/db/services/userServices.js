@@ -1,6 +1,4 @@
-var db = require('../config.js');
-var User = require('../models/user.js');
-var Users = require('../collections/users.js');
+var User = require('../models/user');
 var jwt = require('jwt-simple');
 
 module.exports = {
@@ -41,7 +39,7 @@ module.exports = {
         newUser.save()
           .then(function(newUser) {
           //newUser = new Users //Users.add(newUser);
-            var token = jwt.encode(user, 'secret');
+            var token = jwt.encode(newUser, 'secret');
             res.json({token: token});
           });
       } else {

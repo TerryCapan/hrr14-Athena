@@ -8,7 +8,7 @@ angular.module('karaoke.nav', [])
   var burgerLine2 = document.getElementById('burgerLine2');
   var burgerLine3 = document.getElementById('burgerLine3');
 
-  $scope.toggleClass = function() {
+  $scope.toggleMenu = function() {
     $scope.droppedDown = !$scope.droppedDown;
 
     if ($scope.droppedDown) {
@@ -31,7 +31,9 @@ angular.module('karaoke.nav', [])
   };
 
   $scope.$on('$locationChangeStart', function(next, current) {
-    $scope.droppedDown = false;
+    if ($scope.droppedDown) {
+      $scope.toggleMenu();
+    }
     $scope.loggedIn = authFactory.isAuth();
   });
 });
