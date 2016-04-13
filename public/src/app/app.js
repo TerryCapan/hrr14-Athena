@@ -3,6 +3,7 @@
 // include config and routing (ui-router)
 angular.module('karaoke', [
   'karaoke.services',
+  'karaoke.directives',
   'karaoke.nav',
   'karaoke.home',
   'karaoke.auth',

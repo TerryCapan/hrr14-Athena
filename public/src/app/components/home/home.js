@@ -4,6 +4,7 @@ angular.module('karaoke.home', [])
 
   $scope.lat = '';
   $scope.long = '';
+  $scope.loading = true;
 
   // make a map
   var rendermap = function(lat, long) {
@@ -27,11 +28,13 @@ angular.module('karaoke.home', [])
       $scope.long = pos.coords.longitude;
       rendermap($scope.lat, $scope.long); //<--render map with user location as center of view
       // need: set up a default location for map center if no user location provided
+      $scope.loading = false;
     });
   } else {
     $scope.lat = $rootScope.userLocation.latitude;
     $scope.long = $rootScope.userLocation.longitude;
     rendermap($scope.lat, $scope.long);
+    $scope.loading = false;
   }
 
 });

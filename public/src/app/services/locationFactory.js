@@ -5,10 +5,16 @@ angular.module('karaoke.services')
     var deferred = $q.defer();
 
     if (!$window.navigator.geolocation) {
-      deferred.reject('geolocation not supported');
+      deferred.resolve({
+        coords : {
+          latitude : 38.9072,
+          longitude : -77.0369
+        }
+      });
     } else {
       $window.navigator.geolocation.getCurrentPosition(
         function(pos) {
+          console.log(pos);
           deferred.resolve(pos);
         },
         function(err) {
