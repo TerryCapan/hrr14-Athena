@@ -8,6 +8,10 @@ module.exports = {
   },
 
   addEvent: function(req, res, next) {
+    //the way it is set up now, we need to get username from token
+    //or header, then query db and get user id for foreign key.
+    //perhaps our foreign key should be users.username instead?
+    //see config.js line 44
     var id = req.body.id;
     var date = req.body.date;
     var time = req.body.time;
@@ -21,7 +25,7 @@ module.exports = {
       .then(function(event) {
         if (!event) {
           var newEvent = new Event({
-            foreign: id,
+            user_id: id,
             date: date,
             time: time,
             type_of_meet: type,
