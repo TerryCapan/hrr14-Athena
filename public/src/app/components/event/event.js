@@ -20,7 +20,7 @@ angular.module('karaoke.event', [])
     $scope.type = response.type_of_meet;
     $scope.date = date.day;
     $scope.time = date.time;
-    $scope.video = $sce.trustAsResourceUrl('http://www.youtube.com/embed?listType=search&list=' + response.as_sung_by + ' ' + response.song_title);
+    $scope.video = $sce.trustAsResourceUrl('https://www.youtube.com/embed?listType=search&list=' + response.as_sung_by + ' ' + response.song_title);
     mapService.renderMap($scope, response.lat, response.long, 15, 0, 20, 'event_map');
     mapService.addIcon(response.lat, response.long, $scope.map);
     $scope.loading = false;
