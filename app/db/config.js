@@ -2,13 +2,7 @@ var connectionString = require('./connectionString.js');
 
 var pg = require('knex')({
   client: 'pg',
-  connection: {
-    host: 'localhost',
-    port: '5432',
-    user: 'postgres',
-    database: 'karaoke',
-    charset: 'utf8'
-  }
+  connection: connectionString
 });
 
 pg.schema.hasTable('users').then(function(exists) {
